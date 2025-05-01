@@ -33,7 +33,7 @@
     // Controlla se l'utente è loggato
     onAuthStateChanged(auth, user => {
       if (user) {
-        // Mostra la dashboard
+        // Mostra la dashboard se l'utente è loggato
         document.getElementById("content").style.display = "block";
       } else {
         // Reindirizza alla pagina di login con redirect
