@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+<title>DataWin</title>
+</head>
+<body style="margin: 0; background: #f0f2f5; padding-bottom: 120px;">
+
+  <!-- Contenuto principale -->
+  <div style="padding: 2rem;">
+    <h1>Benvenuto su DataWin</h1>
+    <p>La tua dashboard personale. Seleziona una sezione dal menu in basso.</p>
+  </div>
+
+  <!-- Navbar fissa in basso -->
+  <div id="navbar" style="
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #555;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 16px;
+    max-width: 900px;
+    width: calc(100% - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease-in-out;
+    z-index: 999;
+  " onmouseover="this.style.transform='translateX(-50%) scale(1.02)'" onmouseout="this.style.transform='translateX(-50%)'">
+
+
+    <div style="display: flex; align-items: center; gap: 0.5rem;">
+      <img src="https://gabrieljones.it/assets/logo.png"
+           alt="Logo" style="width: 50px; height: 50px; border-radius: 0%;">
+      <span style="font-size: 1.2rem; font-weight: bold;">DataWin</span>
+    </div>
+
+
+    <div style="display: flex; gap: 1rem; align-items: center;">
+      <a href="#" style="color: white; text-decoration: none;">Home</a>
+      <span>|</span>
+      <a href="https://datawin.gabrieljones.it/ImpSoc/" style="color: white; text-decoration: none;">ImpSoc</a>
+      <span>|</span>
+      <a href="https://datawin.gabrieljones.it/School/" style="color: white; text-decoration: none;">Istruzione</a>
+      <span>|</span>
+      <a href="https://datawin.gabrieljones.it/dsp/" style="color: white; text-decoration: none;">More</a>
+    </div>
+
+
+    <div style="display: flex; gap: 0.8rem; font-size: 1rem;">
+      <a href="/" style="color: white; text-decoration: none;">🔒 Accesso Blog</a>
+    </div>
+  </div>
+
+</body>
+</html>
