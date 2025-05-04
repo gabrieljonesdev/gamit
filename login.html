@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Gabriel Jones Portal</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+</head>
+<body style="margin:0; font-family:Arial, sans-serif; background:#f4f4f4; display:flex; justify-content:center; align-items:center; height:100vh;">
+
+  <div style="background:white; padding:40px; border-radius:12px; box-shadow:0 0 10px rgba(0,0,0,0.1); width:100%; max-width:400px;">
+    <h2 style="text-align:center; margin-bottom:30px; color:#333;">Login</h2>
+    <form id="login-form" style="display:flex; flex-direction:column;">
+      <input type="email" id="email" placeholder="Email" required
+        style="padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px; font-size:16px;">
+      <input type="password" id="password" placeholder="Password" required
+        style="padding:12px; margin-bottom:20px; border:1px solid #ccc; border-radius:8px; font-size:16px;">
+      <button type="submit"
+        style="padding:12px; background-color:#007bff; color:white; border:none; border-radius:8px; font-size:16px; cursor:pointer;">
+        Accedi
+      </button>
+    </form>
+    <p id="message" style="margin-top:20px; text-align:center; color:#cc0000;"></p>
+  </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBTU4YncIZH8AFW22xXs0lJad_qulv_nvc",
+      authDomain: "gabrieljonesportal.firebaseapp.com",
+      projectId: "gabrieljonesportal",
+      storageBucket: "gabrieljonesportal.firebasestorage.app",
+      messagingSenderId: "773044143707",
+      appId: "1:773044143707:web:f9ce2a4e7cd976fe91e17e",
+      measurementId: "G-DC1N94ES34"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    document.getElementById("login-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+          document.getElementById("message").style.color = "green";
+          document.getElementById("message").textContent = "Login effettuato!";
+          setTimeout(() => {
+            window.location.href = "dashboard.html";
+          }, 1000);
+        })
+        .catch((error) => {
+          document.getElementById("message").style.color = "#cc0000";
+          document.getElementById("message").textContent = "Errore: " + error.message;
+        });
+    });
+  </script>
+
+</body>
+</html>
